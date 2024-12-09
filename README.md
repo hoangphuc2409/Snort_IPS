@@ -1,6 +1,6 @@
 # Snort_IPS
 ## Cấu hình router
-Máy ảo router gồm 3 network adapter: NAT, VMnet2, VMnet3
+Máy ảo Ubuntu server gồm 3 network adapter: NAT, VMnet2, VMnet3
 
 Ens34, Ens35 là gateway cho mạng 10.81.59.0/24 và 192.168.59.0/24
 
@@ -60,7 +60,7 @@ service iptables restart
 ```
 
 ## Cấu hình máy Attacker
-Máy attacker gồm 1 network adapter VMnet2, có IP là 10.81.59.100
+Máy ảo Kali Linux gồm 1 network adapter VMnet2, có IP là 10.81.59.100
 
 Mở file cấu hình
 ```
@@ -92,7 +92,7 @@ nameserver 8.8.8.8
 ```
 
 ## Cấu hình máy Snort
-Máy Snort gồm 3 network adapter: NAT, VMnet3, VMnet4
+Máy ảo Ubuntu server gồm 3 network adapter: NAT, VMnet3, VMnet4
 
 Cài đặt Snort và kiểm tra version. Phiên bản trong bài sử dụng là Snort 2.9.7.0
 
@@ -137,7 +137,7 @@ sudo snort -c /etc/snort/nhom7.conf -Q -i ens34:ens35
 ``
 
 ## Cấu hình máy victim
-Máy victim gồm 1 network adapter VMnet4, có IP là 192.168.59.200
+Máy ảo metasploitable 2 gồm 1 network adapter VMnet4, có IP là 192.168.59.200
 ```
 sudo nano /etc/network/interfaces
 ```
